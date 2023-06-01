@@ -1,0 +1,45 @@
+<div class="mb-3 center">
+  <div class="form-check form-check-inline">
+    <input
+      class="form-check-input"
+      [(ngModel)]="seleccionRadioButton"
+      type="radio"
+      name="mostrar"
+      id="Todos"
+      value="Todos"
+      checked="checked"
+      (change)="radioButtonChange()"
+    />
+    <label class="form-check-label text-white" for="Todos"
+      >Todos ({{ totalEstudiantes }})</label
+    >
+  </div>
+  <div class="form-check form-check-inline">
+    <input
+      class="form-check-input"
+      [(ngModel)]="seleccionRadioButton"
+      type="radio"
+      name="mostrar"
+      id="Aprobados"
+      value="Aprobado"
+      (change)="radioButtonChange()"
+    />
+    <label class="form-check-label text-white" for="Aprobados"
+      >Aprobados ({{ totalAprobados }})</label
+    >
+  </div>
+  <div class="form-check form-check-inline">
+    <input
+      class="form-check-input"
+      [(ngModel)]="seleccionRadioButton"
+      type="radio"
+      name="mostrar"
+      id="Reprobados"
+      value="Reprobado"
+      (change)="radioButtonChange()"
+    />
+    <label class="form-check-label text-white" for="Reprobados"
+      >Reprobados ({{ totalReprobados }})</label
+    >
+  </div>
+</div>

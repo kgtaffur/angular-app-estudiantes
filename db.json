@@ -1,0 +1,59 @@
+{
+  "estudiantes": [
+    {
+      "cedula": "123456789",
+      "nombre": "Maria",
+      "apellido": "Martinez",
+      "asignatura": "Lengua",
+      "calificacion1": 10,
+      "calificacion2": 9,
+      "promedio": 9.5,
+      "estado": "Aprobado",
+      "id": 1
+    },
+    {
+      "cedula": "213456789",
+      "nombre": "Pepe",
+      "apellido": "Arauz",
+      "asignatura": "Matemáticas",
+      "calificacion1": 5,
+      "calificacion2": 8,
+      "promedio": 6.5,
+      "estado": "Reprobado",
+      "id": 2
+    },
+    {
+      "cedula": "312456789",
+      "nombre": "Valeria",
+      "apellido": "Bush",
+      "asignatura": "Inglés",
+      "calificacion1": 4,
+      "calificacion2": 6,
+      "promedio": 5,
+      "estado": "Reprobado",
+      "id": 3
+    },
+    {
+      "cedula": "412356789",
+      "nombre": "Omar",
+      "apellido": "Mejía",
+      "asignatura": "Francés",
+      "calificacion1": 10,
+      "calificacion2": 10,
+      "promedio": 10,
+      "estado": "Aprobado",
+      "id": 4
+    },
+    {
+      "cedula": "564321789",
+      "nombre": "Laura",
+      "apellido": "Pérez",
+      "asignatura": "Programación",
+      "calificacion1": 8,
+      "calificacion2": 7,
+      "promedio": 7.5,
+      "estado": "Aprobado",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <div class="btn-group mb-3" role="group" aria-label="Basic example">
+    <a class="btn btn-primary" [routerLink]="['/detalles']">Detalles</a>
+  </div>
+
+  <app-radio-buttons
+    [totalEstudiantes]="totalEstudiantes()"
+    [totalAprobados]="totalAprobados()"
+    [totalReprobados]="totalReprobados()"
+    (contadorChange)="contadorEstudiantesButtonChange($event)"
+  ></app-radio-buttons>
+
+  <div class="row">
+    <form [formGroup]="form" (ngSubmit)="agregarEstudiante()">
+      <div class="input-group">
+        <input
+          type="text"
+          formControlName="cedula"
+          class="form-control form-control-lg"
+          placeholder="Cédula"
+        />
+
+        <input
+          type="text"
+          formControlName="nombre"
+          class="form-control form-control-lg"
+          placeholder="Nombre"
+        />
+
+        <input
+          type="text"
+          formControlName="apellido"
+          class="form-control form-control-lg"
+          placeholder="Apellido"
+        />
+
+        <input
+          type="text"
+          formControlName="asignatura"
+          class="form-control form-control-lg"
+          placeholder="Asignatura"
+        />
+
+        <input
+          type="text"
+          formControlName="calificacion1"
+          class="form-control form-control-lg"
+          placeholder="Calificación 1"
+        />
+
+        <input
+          type="text"
+          formControlName="calificacion2"
+          class="form-control form-control-lg"
+          placeholder="Calificación 2"
+        />
+
+        <button class="btn btn-primary" type="submit">Agregar</button>
+      </div>
+    </form>
+
+    <div class="text-center mt-3">
+      <div *ngIf="listEstudiante.length === 0" class="card p-2">
+        <h6>No hay Estudiantes registrados</h6>
+      </div>
+
+      <table *ngIf="listEstudiante.length > 0" class="table table-light bdr">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">Cédula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Asignatura</th>
+            <th scope="col">Calificación 1</th>
+            <th scope="col">Calificación 2</th>
+            <th scope="col">Promedio</th>
+            <th scope="col">Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="text-center" *ngFor="let estudiante of listEstudiante">
+          <tr
+            *ngIf="
+              seleccionRadioButton === 'Todos' ||
+              seleccionRadioButton === estudiante.estado
+            "
+          >
+            <td>{{ estudiante.cedula }}</td>
+            <td>{{ estudiante.nombre }}</td>
+            <td>{{ estudiante.apellido }}</td>
+            <td>{{ estudiante.asignatura }}</td>
+            <td>{{ estudiante.calificacion1 }}</td>
+            <td>{{ estudiante.calificacion2 }}</td>
+            <td>{{ estudiante.promedio }}</td>
+            <td>{{ estudiante.estado }}</td>
+            <td>
+              <span
+                class="cursor text-danger"
+                (click)="eliminarEstudiante(estudiante)"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
